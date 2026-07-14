@@ -4,45 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Google Search - Animated</title>
-	<!-- Link to the custom CSS for advanced portal animation -->
+	<!-- Link to custom animations stylesheet -->
   <link rel="stylesheet" href="css/animatedStyle.css">
-	<!-- Tailwind CSS Play CDN for utility styles -->
+	<!-- Tailwind CSS framework injection via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-tr from-slate-900 via-slate-800 to-indigo-950 text-white font-sans overflow-hidden">
+<body class="flex flex-col items-center justify-center min-h-screen bg-slate-900 text-white overflow-hidden">
 
-  <!-- Core wrapper to bound animated ambient blobs -->
+  <!-- Wrapper for positioning ambient effects and form -->
   <div class="relative w-full max-w-lg p-8">
-    
-    <!-- Animated background ambient glowing circles -->
+
+    <!-- Background glowing orbs with infinite animation -->
     <div class="absolute top-0 -left-4 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
     <div class="absolute top-0 -right-4 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
     
-    <!-- Main Search Form executing standard GET request -->
-    <form id="searchForm" action="https://www.google.com/search" method="get" class="relative z-10 flex items-center justify-between gap-4 bg-slate-800/80 backdrop-blur-md px-6 py-4 rounded-2xl shadow-2xl border border-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
+    <!-- Glassmorphism form container -->
+    <form id="searchForm" action="https://www.google.com/search" method="get" class="relative z-10 flex flex-col gap-6 bg-slate-800/80 backdrop-blur-md px-8 py-8 rounded-2xl shadow-2xl border border-slate-700/50">
       
-      <!-- Sleek close/back button positioned absolutely in the form -->
-      <a href="index.html" class="absolute top-3 right-4 text-slate-400 hover:text-white transition-colors duration-200" aria-label="Back to hub">✕</a>
-
-      <label class="flex items-center gap-3 text-slate-300 font-semibold text-sm tracking-wider uppercase select-none w-full mt-2">
+      <!-- Search input group -->
+      <label class="flex flex-col gap-2 text-slate-300 font-semibold text-sm tracking-wider uppercase w-full">
         Search:
-        <input type="text" name="q" placeholder="Type your query..." required class="bg-slate-900/50 text-white placeholder-slate-500 text-base rounded-xl px-4 py-2 w-full border border-slate-700 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-300">
+        <input type="text" name="q" placeholder="Type your query..." required class="bg-slate-900/50 text-white placeholder-slate-500 text-base rounded-xl px-4 py-3 w-full border border-slate-700 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-300">
       </label>
-
-      <button type="submit" class="text-2xl mt-2 transition-transform duration-200 active:scale-90 hover:scale-110" aria-label="Submit Search">
-        🔍
-      </button>
+      
+      <!-- Action buttons row using flexbox -->
+      <div class="flex items-center gap-4 w-full">
+        <button type="submit" class="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-6 py-3 rounded-xl transition-colors duration-200" aria-label="Submit Search">
+          Search
+        </button>
+        <a href="index.html" class="flex-1 text-center bg-transparent border border-slate-600 hover:bg-slate-700 text-slate-300 hover:text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200" aria-label="Back to hub">
+          Back
+        </a>
+      </div>
 
     </form>
     
-    <!-- Option 1: Full-screen blur overlay containing the Portal Spinner -->
+    <!-- Full-screen overlay for portal spinner -->
     <div id="loaderOverlay" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md hidden flex-col items-center justify-center z-50">
       <div class="portal-spinner mb-4"></div>
-      <p class="text-indigo-300 font-medium tracking-wide animate-pulse">Redirecting to Google...</p>
+      <p class="text-indigo-300 font-medium tracking-wide animate-pulse">Connecting...</p>
     </div>
 
   </div>
-
+  
+  <!-- DOM manipulation script for loader display -->
   <script>
     const form = document.getElementById('searchForm');
 	const loader = document.getElementById('loaderOverlay');

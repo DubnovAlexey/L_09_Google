@@ -3,22 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Classic Google Search</title>
-	<!-- Link to the classic stylesheet inside the css folder -->
+  <title>Google Search - Classic</title>
+	<!-- External stylesheet link for classic design -->
   <link rel="stylesheet" href="css/classicStyle.css">
 </head>
 <body>
 
-  <!-- Form container with relative positioning for absolute child elements -->
+  <!-- Main search form executing GET request -->
   <form class="search-form" action="https://www.google.com/search" method="get">
-    <!-- Close button styled as an absolute element -->
-    <a href="index.html" class="back-close-btn" aria-label="Go back to hub">✕</a>
     
+    <!-- Label and text input container -->
     <label class="search-label">
       Search:
       <input class="search-input" type="text" name="q" placeholder="Type your query..." required>
     </label>
-    <button class="search-btn" type="submit" aria-label="Search">🔍</button>
+    
+    <!-- Action row containing submit and back buttons -->
+    <div class="actions-group">
+      <button class="search-btn" type="submit" aria-label="Submit Search">Search</button>
+      <a href="index.html" class="back-btn" aria-label="Back to hub">Back</a>
+    </div>
+
   </form>
 
 </body>

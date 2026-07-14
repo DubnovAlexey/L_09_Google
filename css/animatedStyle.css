@@ -1,4 +1,11 @@
-/* Custom keyframes for the organic background blobs */
+/* Reset layout for consistent sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Keyframes for ambient background blobs */
 @keyframes blob {
     0% { transform: translate(0px, 0px) scale(1); }
     33% { transform: translate(30px, -50px) scale(1.1); }
@@ -6,15 +13,17 @@
     100% { transform: translate(0px, 0px) scale(1); }
 }
 
+/* Applying animation to elements */
 .animate-blob {
     animation: blob 7s infinite;
 }
 
+/* Utility class for staggered animations */
 .animation-delay-2000 {
     animation-delay: 2s;
 }
 
-/* Pulsing Orbit Portal Loader styling */
+/* High-tech portal spinner with conic gradient */
 .portal-spinner {
     width: 60px;
     height: 60px;
@@ -26,15 +35,9 @@
     box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
 }
 
-/* Combined keyframes for simultaneous rotation and scaling */
+/* Synchronized rotation and scaling */
 @keyframes spinAndPulse {
-    0% {
-        transform: rotate(0deg) scale(0.9);
-    }
-    50% {
-        transform: rotate(180deg) scale(1.1);
-    }
-    100% {
-        transform: rotate(360deg) scale(0.9);
-    }
+    0% { transform: rotate(0deg) scale(0.9); }
+    50% { transform: rotate(180deg) scale(1.1); }
+    100% { transform: rotate(360deg) scale(0.9); }
 }
