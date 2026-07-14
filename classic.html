@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Search Tool - Standard</title>
+	<!-- Link to the external CSS stylesheet -->
+  <link rel="stylesheet" href="css/classicStyle.css">
+</head>
+<body>
+
+  <!-- Standard GET request form pointing to Google Search engine -->
+  <form class="search-form" action="https://www.google.com/search" method="get">
+    <label class="search-label">
+      Search:
+      <!-- The 'name' attribute must be exactly 'q' for Google to process the query -->
+      <input class="search-input" type="text" name="q" placeholder="Type your query..." required>
+    </label>
+	  <!-- Accessible icon-only button without text, leveraging semantic button tag -->
+    <button class="search-btn" type="submit" aria-label="Submit Search">🔍</button>
+  </form>
+
+</body>
+</html>

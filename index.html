@@ -3,22 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Google Search Tool - Standard</title>
-	<!-- Link to the external CSS stylesheet -->
+  <title>Google Search Project Hub</title>
+	<!-- Link to the external gateway stylesheet -->
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
-  <!-- Standard GET request form pointing to Google Search engine -->
-  <form class="search-form" action="https://www.google.com/search" method="get">
-    <label class="search-label">
-      Search:
-      <!-- The 'name' attribute must be exactly 'q' for Google to process the query -->
-      <input class="search-input" type="text" name="q" placeholder="Type your query..." required>
-    </label>
-	  <!-- Accessible icon-only button without text, leveraging semantic button tag -->
-    <button class="search-btn" type="submit" aria-label="Submit Search">🔍</button>
-  </form>
+  <!-- Main container for the project selection interface -->
+  <main class="hub-container">
+    <h1 class="hub-title">Google Search Projects</h1>
+    <p class="hub-subtitle">Select the interface version you want to test:</p>
+	  
+	  <!-- Navigation group containing links styled as action buttons -->
+    <nav class="hub-nav">
+      <a href="classic.html" class="hub-btn btn-classic">Standard Version</a>
+      <a href="animated.html" class="hub-btn btn-animated">Animated Version</a>
+    </nav>
+  </main>
 
 </body>
 </html>
