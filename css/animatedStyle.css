@@ -1,17 +1,9 @@
-/* Custom @keyframes for Tailwind background blobs and transitions */
+/* Custom keyframes for the organic background blobs */
 @keyframes blob {
-    0% {
-        transform: translate(0px, 0px) scale(1);
-    }
-    33% {
-        transform: translate(30px, -50px) scale(1.1);
-    }
-    66% {
-        transform: translate(-20px, 20px) scale(0.95);
-    }
-    100% {
-        transform: translate(0px, 0px) scale(1);
-    }
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.95); }
+    100% { transform: translate(0px, 0px) scale(1); }
 }
 
 .animate-blob {
@@ -22,19 +14,27 @@
     animation-delay: 2s;
 }
 
-/* Interactive Futuristic Portal Loader (Custom CSS Spinner) */
+/* Pulsing Orbit Portal Loader styling */
 .portal-spinner {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    background: conic-gradient(#6366f1, #3b82f6, transparent 60%);
+    background: conic-gradient(#6366f1, #3b82f6, transparent 70%);
     -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 6px), #fff 0);
     mask: radial-gradient(farthest-side, transparent calc(100% - 6px), #fff 0);
-    animation: spin 1s linear infinite;
+    animation: spinAndPulse 1.5s ease-in-out infinite;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
 }
 
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
+/* Combined keyframes for simultaneous rotation and scaling */
+@keyframes spinAndPulse {
+    0% {
+        transform: rotate(0deg) scale(0.9);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(360deg) scale(0.9);
     }
 }
