@@ -1,11 +1,11 @@
-/* Reset layout for consistent sizing */
+/* Global reset for consistent rendering across browsers */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Keyframes for ambient background blobs */
+/* Keyframes for organic floating background spheres */
 @keyframes blob {
     0% { transform: translate(0px, 0px) scale(1); }
     33% { transform: translate(30px, -50px) scale(1.1); }
@@ -13,31 +13,98 @@
     100% { transform: translate(0px, 0px) scale(1); }
 }
 
-/* Applying animation to elements */
 .animate-blob {
-    animation: blob 7s infinite;
+    animation: blob 8s infinite ease-in-out;
 }
 
-/* Utility class for staggered animations */
 .animation-delay-2000 {
     animation-delay: 2s;
 }
 
-/* High-tech portal spinner with conic gradient */
-.portal-spinner {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: conic-gradient(#6366f1, #3b82f6, transparent 70%);
-    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 6px), #fff 0);
-    mask: radial-gradient(farthest-side, transparent calc(100% - 6px), #fff 0);
-    animation: spinAndPulse 1.5s ease-in-out infinite;
-    box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+/* Base setup for the form container to hide overflowing gradient */
+.animated-border-form {
+    position: relative;
+    overflow: hidden;
+    background-color: #1e293b; /* Fallback border color */
 }
 
-/* Synchronized rotation and scaling */
-@keyframes spinAndPulse {
-    0% { transform: rotate(0deg) scale(0.9); }
-    50% { transform: rotate(180deg) scale(1.1); }
-    100% { transform: rotate(360deg) scale(0.9); }
+/* Pseudo-element creating the spinning conic gradient */
+.animated-border-form::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+            transparent,
+            transparent,
+            transparent,
+            #6366f1,
+            #a855f7
+    );
+    animation: rotateBorder 4s linear infinite;
+    z-index: 0;
+}
+
+/* Animation rule for a smooth 360-degree continuous rotation */
+@keyframes rotateBorder {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Inner core ensuring content sits above the spinning gradient */
+.form-inner-core {
+    /* Using Tailwind classes for background, but ensuring z-index here */
+    z-index: 10;
+}
+
+/* High-tech portal spinner (To be replaced in the next step) */
+/* Cyber Hex-Scanner Base Container */
+.portal-spinner {
+    width: 80px;
+    height: 80px;
+    position: relative;
+
+    /* Creating a perfect hexagon using clip-path polygon coordinates */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background-color: rgba(15, 23, 42, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Radar sweep effect using an oversized pseudo-element */
+.portal-spinner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+
+    /* Cyan and transparent gradient simulating a scanner beam */
+    background: conic-gradient(
+            from 0deg,
+            transparent 70%,
+            rgba(34, 211, 238, 0.1) 80%,
+            rgba(34, 211, 238, 1) 100%
+    );
+    animation: radarScan 1.5s linear infinite;
+}
+
+/* Inner dark core to make the scanner hollow */
+.portal-spinner::after {
+    content: '';
+    position: absolute;
+    width: 74px;
+    height: 74px;
+    background-color: #020617;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+/* Keyframes for continuous 360-degree rotation of the beam */
+@keyframes radarScan {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

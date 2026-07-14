@@ -9,40 +9,44 @@
 	<!-- Tailwind CSS framework injection via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen bg-slate-900 text-white overflow-hidden">
+<body class="flex flex-col items-center justify-center min-h-screen bg-slate-950 text-white overflow-hidden">
 
-  <!-- Wrapper for positioning ambient effects and form -->
+  <!-- Main wrapper for ambient background and central form -->
   <div class="relative w-full max-w-lg p-8">
 
-    <!-- Background glowing orbs with infinite animation -->
-    <div class="absolute top-0 -left-4 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-    <div class="absolute top-0 -right-4 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+    <!-- Background glowing orbs with infinite translation -->
+    <div class="absolute top-0 -left-4 w-72 h-72 bg-blue-600 rounded-full mix-blend-screen filter blur-[80px] opacity-30 animate-blob"></div>
+    <div class="absolute top-0 -right-4 w-72 h-72 bg-indigo-600 rounded-full mix-blend-screen filter blur-[80px] opacity-30 animate-blob animation-delay-2000"></div>
     
-    <!-- Glassmorphism form container -->
-    <form id="searchForm" action="https://www.google.com/search" method="get" class="relative z-10 flex flex-col gap-6 bg-slate-800/80 backdrop-blur-md px-8 py-8 rounded-2xl shadow-2xl border border-slate-700/50">
+    <!-- Animated border form container -->
+    <form id="searchForm" action="https://www.google.com/search" method="get" class="animated-border-form relative z-10 rounded-2xl shadow-2xl p-[2px]">
       
-      <!-- Search input group -->
-      <label class="flex flex-col gap-2 text-slate-300 font-semibold text-sm tracking-wider uppercase w-full">
-        Search:
-        <input type="text" name="q" placeholder="Type your query..." required class="bg-slate-900/50 text-white placeholder-slate-500 text-base rounded-xl px-4 py-3 w-full border border-slate-700 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-300">
-      </label>
-      
-      <!-- Action buttons row using flexbox -->
-      <div class="flex items-center gap-4 w-full">
-        <button type="submit" class="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-6 py-3 rounded-xl transition-colors duration-200" aria-label="Submit Search">
-          Search
-        </button>
-        <a href="index.html" class="flex-1 text-center bg-transparent border border-slate-600 hover:bg-slate-700 text-slate-300 hover:text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200" aria-label="Back to hub">
-          Back
-        </a>
+      <!-- Inner dark core masking the center of the spinning gradient -->
+      <div class="form-inner-core bg-slate-900 px-8 py-8 rounded-2xl flex flex-col gap-6 w-full h-full relative z-20">
+        
+        <!-- Search input group -->
+        <label class="flex flex-col gap-2 text-indigo-300 font-bold text-xs tracking-widest uppercase w-full">
+          Search:
+          <input type="text" name="q" placeholder="Type your query..." required class="bg-slate-950/50 text-white placeholder-slate-600 text-base rounded-xl px-5 py-4 w-full border border-slate-800 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/30 transition-all duration-300">
+        </label>
+        
+        <!-- Symmetrical action buttons row -->
+        <div class="flex items-center gap-4 w-full">
+          <button type="submit" class="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-6 py-3 rounded-xl transition-colors duration-200 shadow-lg shadow-indigo-500/20" aria-label="Submit Search">
+            Search
+          </button>
+          <a href="index.html" class="flex-1 text-center bg-transparent border border-slate-700 hover:bg-slate-800 hover:border-slate-500 text-slate-300 hover:text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200" aria-label="Back to hub">
+            Back
+          </a>
+        </div>
+        
       </div>
-
     </form>
     
     <!-- Full-screen overlay for portal spinner -->
-    <div id="loaderOverlay" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md hidden flex-col items-center justify-center z-50">
-      <div class="portal-spinner mb-4"></div>
-      <p class="text-indigo-300 font-medium tracking-wide animate-pulse">Connecting...</p>
+    <div id="loaderOverlay" class="fixed inset-0 bg-slate-950/90 backdrop-blur-lg hidden flex-col items-center justify-center z-50">
+      <div class="portal-spinner mb-6"></div>
+      <p class="text-indigo-400 font-semibold tracking-widest uppercase text-sm animate-pulse">Connecting...</p>
     </div>
 
   </div>
