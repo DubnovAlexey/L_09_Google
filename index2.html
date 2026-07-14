@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Search Tool - Tailwind & Animation</title>
+	<!-- Link to the custom Tailwind configuration and stylesheet -->
+  <link rel="stylesheet" href="./css/style2.css">
+	<!-- Tailwind CSS Play CDN for execution and compilation -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-tr from-slate-900 via-slate-800 to-indigo-950 text-white font-sans overflow-hidden">
+
+  <!-- Core wrapper for absolute positioning of background animated elements -->
+  <div class="relative w-full max-w-lg p-8">
+    
+    <!-- Background Glow Animations (decorative) -->
+    <div class="absolute top-0 -left-4 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+    <div class="absolute top-0 -right-4 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+    
+    <!-- Main Form Element running standard GET request to Google -->
+    <form id="searchForm" action="https://www.google.com/search" method="get" class="relative z-10 flex items-center justify-between gap-4 bg-slate-800/80 backdrop-blur-md px-6 py-4 rounded-2xl shadow-2xl border border-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
+      
+      <label class="flex items-center gap-3 text-slate-300 font-semibold text-sm tracking-wider uppercase select-none">
+        Search:
+        <input type="text" name="q" placeholder="Type your query..." required class="bg-slate-900/50 text-white placeholder-slate-500 text-base rounded-xl px-4 py-2 w-64 border border-slate-700 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-300">
+      </label>
+		
+		<!-- Submit button triggers search and custom CSS loader state via JS -->
+      <button type="submit" class="text-2xl transition-transform duration-200 active:scale-90 hover:scale-110" aria-label="Search">
+        🔍
+      </button>
+
+    </form>
+    
+    <!-- Interactive Waiting / Transition Overlay State -->
+    <div id="loaderOverlay" class="hidden absolute inset-0 z-20 flex flex-col items-center justify-center bg-slate-950/90 rounded-2xl border border-indigo-500/30 backdrop-blur-sm transition-opacity duration-300">
+      <!-- High-fidelity Custom CSS Spinner with keyframe animation from style2.css -->
+      <div class="portal-spinner mb-4"></div>
+      <p class="text-indigo-300 font-medium tracking-wide animate-pulse">Redirecting to Google...</p>
+    </div>
+
+  </div>
+
+  <script>
+    const form = document.getElementById('searchForm');
+	const loader = document.getElementById('loaderOverlay');
+	
+	form.addEventListener('submit', (e) => {
+		// Show custom waiting state before the browser navigates away to Google's servers
+		loader.classList.remove('hidden');
+		loader.classList.add('flex');
+	});
+  </script>
+</body>
+</html>

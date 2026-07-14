@@ -1,0 +1,80 @@
+/* CSS Reset to normalize default browser margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Flexbox layout to center the search component on the viewport */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+/* Beautiful form card wrapper with modern shadow and rounded corners */
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #ffffff;
+    padding: 16px 32px;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    transition: box-shadow 0.3s ease;
+}
+
+.search-form:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Accessible label combining the title and the input element */
+.search-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #4a5568;
+    user-select: none;
+}
+
+/* Styled text input with smooth border-color transition on focus */
+.search-input {
+    border: 2px solid #e2e8f0;
+    border-radius: 25px;
+    padding: 8px 16px;
+    font-size: 15px;
+    color: #2d3748;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #4285f4;
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.15);
+}
+
+/* Semantic button containing only the search magnifying glass emoji */
+.search-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Accessible hover and click visual states */
+.search-btn:hover {
+    transform: scale(1.2);
+}
+
+.search-btn:active {
+    transform: scale(0.9);
+}
