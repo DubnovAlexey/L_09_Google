@@ -1,3 +1,8 @@
+/* Декоративные размытые пятна выходят за край — обрезаем, чтобы на телефоне не было прокрутки вбок */
+html, body {
+    overflow-x: clip;
+}
+
 /* Global reset for consistent rendering across browsers */
 * {
     margin: 0;
