@@ -56,6 +56,10 @@
     const form = document.getElementById('searchForm');
 	const loader = document.getElementById('loaderOverlay');
 	
+	window.addEventListener('pageshow', () => {
+		loader.classList.add('hidden');
+		loader.classList.remove('flex');
+	});
 	form.addEventListener('submit', () => {
 		loader.classList.remove('hidden');
 		loader.classList.add('flex');

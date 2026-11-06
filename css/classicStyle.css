@@ -97,3 +97,8 @@ body {
     background-color: #e2e8f0;
     color: #0f172a;
 }
+/* Narrow screens retain readable controls without horizontal overflow. */
+.search-form { max-width: calc(100vw - 24px); }
+.search-input { min-width: 0; width: 100%; }
+@media (max-width: 420px) { .search-form { padding: 24px 18px; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

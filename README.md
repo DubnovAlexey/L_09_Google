@@ -13,6 +13,8 @@ Two versions of a search form that sends the query to Google, and a small hub pa
 - Both forms use `action="https://www.google.com/search"`, `method="get"` and the field `name="q"` — the browser builds the search URL by itself, no JavaScript needed.
 - Fit a phone screen.
 
+- The animated loader resets after Back navigation; reduced-motion settings stop decorative animations.
+
 ## Tech stack
 
 HTML5 forms · CSS3 animations · Tailwind CSS (CDN) · GitHub Pages

@@ -16,4 +16,6 @@ HTML5 · CSS3 · Tailwind CSS (CDN) · GitHub Pages
 
 פתחו את `index.html` בדפדפן.
 
+מחוון הטעינה מתאפס לאחר חזרה אחורה, והעדפת reduced motion עוצרת אנימציות דקורטיביות.
+
 </div>
