@@ -85,3 +85,26 @@ body {
     transform: translateY(0);
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* Source code link on the hub — a quiet glass link under the two buttons */
+.hub-source {
+    margin-top: 1.6rem;
+    text-align: center;
+}
+
+.hub-source a {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    text-decoration: none;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transition: background-color 0.2s ease;
+}
+
+.hub-source a:hover,
+.hub-source a:focus-visible {
+    background: rgba(255, 255, 255, 0.22);
+    outline: none;
+}
