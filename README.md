@@ -39,7 +39,7 @@ Search leaves this project for Google. The project does not implement a search e
 
 Proposals below are planned work, not existing features.
 
-- Visual: keep contrast and keyboard focus consistent across both versions; add a neutral magnifying-glass favicon.
+- Visual: keep contrast and keyboard focus consistent across both versions.
 - Engineering: build Tailwind locally instead of loading its runtime CDN script, and add a navigation/Back smoke check.
 - Features: offer optional local search history with an explicit clear action; leave external search visibly separate from the local project.
 
@@ -84,7 +84,7 @@ HTML5-формы · CSS3-анимации · JavaScript · Tailwind CSS (CDN) ·
 
 Ниже перечислены предложения, а не уже реализованные функции.
 
-- Визуал: единые контраст и фокус с клавиатуры в обеих версиях; нейтральный favicon лупы.
+- Визуал: единые контраст и фокус с клавиатуры в обеих версиях.
 - Инженерия: собирать Tailwind локально вместо runtime CDN и добавить проверку перехода с возвратом «Назад».
 - Функции: необязательная локальная история запросов с явной очисткой; внешнюю выдачу отделить от локальной страницы.
 
@@ -124,7 +124,7 @@ HTML5 · CSS3 · JavaScript · Tailwind CSS (CDN) · GitHub Pages
 
 הסעיפים הבאים הם הצעות להמשך, לא יכולות שכבר יושמו.
 
-- עיצוב: ניגודיות ומיקוד עקביים בשתי הגרסאות; סמל לשונית ניטרלי של זכוכית מגדלת.
+- עיצוב: ניגודיות ומיקוד עקביים בשתי הגרסאות.
 - הנדסה: בניית Tailwind מקומית במקום סקריפט CDN בזמן ריצה ובדיקת ניווט וחזרה באמצעות Back.
 - יכולות: היסטוריית חיפוש מקומית לבחירה עם פעולת ניקוי ברורה; הבחנה גלויה בין האתר המקומי לתוצאות החיצוניות.
 
