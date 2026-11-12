@@ -1,6 +1,8 @@
+<!--suppress MarkdownUnresolvedFileReference -->
+
 # Google Search Forms
 
-[English](#english) · [Русский](#russian) · [עברית](#hebrew)
+[English](#english) · [Русский](#russian) · [עברית](#hebrew) · [Español](#spanish) · [Français](#french)
 
 <a name="english"></a>
 
@@ -129,3 +131,91 @@ HTML5 · CSS3 · JavaScript · Tailwind CSS (CDN) · GitHub Pages
 - יכולות: היסטוריית חיפוש מקומית לבחירה עם פעולת ניקוי ברורה; הבחנה גלויה בין האתר המקומי לתוצאות החיצוניות.
 
 </div>
+
+---
+
+<a name="spanish"></a>
+
+## Español
+
+**Formularios de búsqueda de Google**
+
+Dos versiones de un formulario de búsqueda que envía la consulta a Google y una pequeña página «hub» para elegir. Una lección del curso Full Stack sobre formularios HTML.
+
+**Demo:** https://dubnovalexey.github.io/L_09_Google/
+
+### Pruébelo
+
+Compare Standard Version y Animated Version. Escriba una consulta, vaya a los resultados de Google y vuelva con el botón «Atrás» para comprobar que el formulario se restablece.
+
+### Qué hay dentro
+
+- **Versión estándar**: un formulario HTML sencillo con su propio CSS.
+- **Versión animada**: el mismo formulario con Tailwind CSS: un marco luminoso que recorre el borde y suaves manchas difuminadas en el fondo.
+- Ambos formularios usan `action="https://www.google.com/search"`, `method="get"` y el campo `name="q"`: el navegador arma solo la dirección de búsqueda, sin JavaScript.
+- Caben en la pantalla de un móvil.
+- Al volver con el botón «Atrás», el indicador de carga se reinicia; reduced motion desactiva la animación decorativa.
+
+### Tecnologías
+
+Formularios HTML5 · animaciones CSS3 · JavaScript · Tailwind CSS (CDN) · GitHub Pages
+
+### Cómo ejecutarlo
+
+Abra `index.html` en el navegador.
+
+### Alcance de la demo
+
+La búsqueda lleva a Google. Aquí no hay un motor de búsqueda propio; la versión animada depende además de Tailwind por CDN.
+
+### Desarrollo futuro
+
+Lo que sigue son propuestas, no funciones ya implementadas.
+
+- Visual: el mismo contraste y el mismo foco de teclado en ambas versiones.
+- Ingeniería: compilar Tailwind en local en lugar del CDN en tiempo de ejecución y añadir una prueba de la vuelta con «Atrás».
+- Funciones: un historial local de consultas opcional con borrado explícito; separar los resultados externos de la página local.
+
+---
+
+<a name="french"></a>
+
+## Français
+
+**Formulaires de recherche Google**
+
+Deux versions d'un formulaire de recherche qui envoie la requête à Google, et une petite page « hub » pour choisir. Une leçon du cours Full Stack sur les formulaires HTML.
+
+**Démo :** https://dubnovalexey.github.io/L_09_Google/
+
+### À essayer
+
+Comparez Standard Version et Animated Version. Saisissez une requête, allez aux résultats de Google, puis revenez avec le bouton « Retour » pour vérifier que le formulaire est rétabli.
+
+### Ce qu'il y a dedans
+
+- **Version standard** : un formulaire HTML simple avec son propre CSS.
+- **Version animée** : le même formulaire en Tailwind CSS, avec un cadre lumineux qui court sur le bord et de douces taches floues en fond.
+- Les deux formulaires utilisent `action="https://www.google.com/search"`, `method="get"` et le champ `name="q"` : le navigateur construit seul l'adresse de recherche, sans JavaScript.
+- Ils tiennent sur un écran de téléphone.
+- Au retour par le bouton « Retour », l'indicateur de chargement est remis à zéro ; reduced motion coupe l'animation décorative.
+
+### Technologies
+
+Formulaires HTML5 · animations CSS3 · JavaScript · Tailwind CSS (CDN) · GitHub Pages
+
+### Lancer le projet
+
+Ouvrez `index.html` dans le navigateur.
+
+### Limites de la démo
+
+La recherche mène à Google. Il n'y a pas ici de moteur de recherche propre ; la version animée dépend en plus de Tailwind par CDN.
+
+### Évolutions possibles
+
+Ce qui suit sont des propositions, pas des fonctions déjà réalisées.
+
+- Visuel : le même contraste et le même focus clavier dans les deux versions.
+- Ingénierie : compiler Tailwind en local au lieu du CDN à l'exécution et ajouter un test du retour par « Retour ».
+- Fonctions : un historique local des requêtes facultatif avec effacement explicite ; séparer les résultats externes de la page locale.
